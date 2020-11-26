@@ -39,7 +39,7 @@ class ViewController: UIViewController {
         return String(UUID().uuidString.prefix(8))
     }()
 
-    static var agoraAppId = <#Agora App ID#>
+    static var agoraAppId: String = <#Agora App ID#>
 
     override func loadView() {
         super.loadView()

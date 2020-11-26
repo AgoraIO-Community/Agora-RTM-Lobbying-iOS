@@ -1,5 +1,5 @@
 //
-//  ViewController+ChannelDelegate.swift
+//  ViewController+AgoraRtmChannelDelegate.swift
 //  Agora-RTM-iOS
 //
 //  Created by Max Cobb on 23/11/2020.

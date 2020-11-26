@@ -21,7 +21,7 @@
 		F3C4326F256E9C4000E2AD43 /* ViewController+AgoraRtmDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C4326E256E9C4000E2AD43 /* ViewController+AgoraRtmDelegate.swift */; };
 		F3C43272256E9C9B00E2AD43 /* ViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C43271256E9C9B00E2AD43 /* ViewController+TableView.swift */; };
 		F3C43275256EB18100E2AD43 /* CharacterSet+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C43274256EB18100E2AD43 /* CharacterSet+Extensions.swift */; };
-		F3F6853C256BF0580090A6C0 /* ViewController+ChannelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F6853B256BF0580090A6C0 /* ViewController+ChannelDelegate.swift */; };
+		F3F6853C256BF0580090A6C0 /* ViewController+AgoraRtmChannelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F6853B256BF0580090A6C0 /* ViewController+AgoraRtmChannelDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +42,7 @@
 		F3C4326E256E9C4000E2AD43 /* ViewController+AgoraRtmDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+AgoraRtmDelegate.swift"; sourceTree = "<group>"; };
 		F3C43271256E9C9B00E2AD43 /* ViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+TableView.swift"; sourceTree = "<group>"; };
 		F3C43274256EB18100E2AD43 /* CharacterSet+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterSet+Extensions.swift"; sourceTree = "<group>"; };
-		F3F6853B256BF0580090A6C0 /* ViewController+ChannelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ChannelDelegate.swift"; sourceTree = "<group>"; };
+		F3F6853B256BF0580090A6C0 /* ViewController+AgoraRtmChannelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+AgoraRtmChannelDelegate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,12 +90,11 @@
 				F3264FCB2563D0A100F7DC5E /* AppDelegate.swift */,
 				F3264FCD2563D0A100F7DC5E /* SceneDelegate.swift */,
 				F3264FCF2563D0A100F7DC5E /* ViewController.swift */,
-				F3C43271256E9C9B00E2AD43 /* ViewController+TableView.swift */,
 				F3C4326E256E9C4000E2AD43 /* ViewController+AgoraRtmDelegate.swift */,
 				F3C43269256E9A7F00E2AD43 /* ViewController+SendRTM.swift */,
-				F3F6853B256BF0580090A6C0 /* ViewController+ChannelDelegate.swift */,
+				F3F6853B256BF0580090A6C0 /* ViewController+AgoraRtmChannelDelegate.swift */,
 				F3C43265256E92DC00E2AD43 /* ViewController+BreakoutMethods.swift */,
-				F37A3559256D435100764130 /* AgoraVideoViewController.swift */,
+				F3C43271256E9C9B00E2AD43 /* ViewController+TableView.swift */,
 				F3C43268256E9A5900E2AD43 /* Utilities */,
 				F3264FD42563D0A100F7DC5E /* Assets.xcassets */,
 				F3264FD62563D0A100F7DC5E /* LaunchScreen.storyboard */,
@@ -107,6 +106,7 @@
 		F3C43268256E9A5900E2AD43 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				F37A3559256D435100764130 /* AgoraVideoViewController.swift */,
 				F3264FEA25653AE200F7DC5E /* AgoraRTM+ErrorExtensions.swift */,
 				F3C43274256EB18100E2AD43 /* CharacterSet+Extensions.swift */,
 			);
@@ -241,7 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3F6853C256BF0580090A6C0 /* ViewController+ChannelDelegate.swift in Sources */,
+				F3F6853C256BF0580090A6C0 /* ViewController+AgoraRtmChannelDelegate.swift in Sources */,
 				F3264FD02563D0A100F7DC5E /* ViewController.swift in Sources */,
 				F3264FCC2563D0A100F7DC5E /* AppDelegate.swift in Sources */,
 				F3264FCE2563D0A100F7DC5E /* SceneDelegate.swift in Sources */,
