@@ -12,10 +12,12 @@ import AgoraRtmKit
 import SwiftSpinner
 
 class ViewController: UIViewController {
+
+    static var agoraAppId: String = <#Agora App ID#>
+
     var agoraRTM: AgoraRtmKit!
     var lobbyChannel: AgoraRtmChannel?
     var breakoutChannel: AgoraRtmChannel?
-    var autoBreakout = false
     var lobbyChannelName = "lobby"
     let tableView = UITableView()
 
@@ -24,13 +26,15 @@ class ViewController: UIViewController {
     }
     var breakoutData: ChannelData?
     var breakoutSize = 2
-    var channelsList: [String: ChannelData] = ["example": ChannelData(channelName: "example")] {
+
+    var channelsList: [String: ChannelData] = [:] {
         didSet {
             if oldValue.keys.sorted() != channelsList.keys.sorted() {
                 self.tableView.reloadData()
             }
         }
     }
+
     lazy var username: String = {
         if let nameFiltered = self.filterNameRTM(str: UIDevice.current.name) {
             return nameFiltered
@@ -38,8 +42,6 @@ class ViewController: UIViewController {
         // device name is not usable, using random hash
         return String(UUID().uuidString.prefix(8))
     }()
-
-    static var agoraAppId: String = <#Agora App ID#>
 
     override func loadView() {
         super.loadView()
@@ -93,18 +95,6 @@ class ViewController: UIViewController {
     }
 
     func newChannelData(_ channelData: ChannelData) {
-        if self.autoBreakout {
-            // If we receive a proposed breakout channel from someone in the lobby
-            // and we don't already have one that we're in, get in one in auto mode.
-            let breakoutChannel = channelData.channelName
-            self.createAndJoin(channel: breakoutChannel) { boc in
-                guard let boc = boc else {
-                    return
-                }
-                self.joinedBreakout(name: channelData.channelName, channel: boc)
-            }
-        } else {
-            self.channelsList[channelData.channelName] = channelData
-        }
+        self.channelsList[channelData.channelName] = channelData
     }
 }

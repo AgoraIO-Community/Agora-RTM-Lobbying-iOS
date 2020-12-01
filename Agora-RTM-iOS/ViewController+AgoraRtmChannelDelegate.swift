@@ -16,21 +16,10 @@ extension ViewController: AgoraRtmChannelDelegate, UIViewControllerTransitioning
     func channel(_ channel: AgoraRtmChannel, memberJoined member: AgoraRtmMember) {
         print("\(member.userId) joined channel \(member.channelId)")
         if channel == self.lobbyChannel {
-            // if someone joined the lobby, send a request for them
-            // to join the breakout room, if no higher people in breakout
+            // if someone joined the lobby, send information to them
+            // about join the breakout room if we are the most senior member
             if let bod = self.breakoutData, (bod.seniors ?? []).isEmpty {
                 self.send(encodableObj: bod, to: member)
-            } else {
-                if self.autoBreakout {
-                    // If using autoBreakout then immediately create a channel
-                    // and request for new user to join
-                    let channelName = UUID().uuidString
-                    self.createAndJoin(channel: channelName) { channel in
-                        self.breakoutChannel = channel
-                        self.breakoutData = ChannelData(channelName: channelName, memberCount: 1, seniors: [])
-                        self.send(encodableObj: self.breakoutData!, to: member)
-                    }
-                }
             }
         } else {
             // Otherwise someone has joined our breakout channel
