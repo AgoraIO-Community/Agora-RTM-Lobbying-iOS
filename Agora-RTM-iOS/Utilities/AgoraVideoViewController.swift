@@ -51,7 +51,7 @@ class AgoraVideoViewController: UIViewController {
         let agoraView = AgoraVideoViewer(connectionData: AgoraConnectionData(appId: appId, appToken: token), viewController: self, style: .grid)
         agoraView.fills(view: self.view)
 
-        agoraView.joinChannel(channel: channel)
+        agoraView.join(channel: channel)
         self.agoraVideoView = agoraView
     }
     required init?(coder: NSCoder) {

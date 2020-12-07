@@ -28,10 +28,20 @@ extension ViewController: AgoraRtmChannelDelegate, UIViewControllerTransitioning
                 return
             }
             bod.memberCount += 1
-            SwiftSpinner.shared.title = "\(bod.memberCount)/\(bod.memberLimit)"
-            if (bod.seniors ?? []).isEmpty, bod.memberLimit == bod.memberCount {
-                self.createVideoChat(with: "test")
-                self.send(encodableObj: VideoChannel(channel: "test"), to: channel)
+            if (bod.seniors ?? []).isEmpty {
+                if let boV = self.breakoutVideo {
+                    // video already started, send it to the member
+                    self.send(encodableObj: boV, to: member)
+                } else if bod.membersMinimum == bod.memberCount {
+                    let channelName = String(UUID().uuidString.prefix(8))
+                    let boV = VideoChannel(channel: channelName)
+                    self.breakoutVideo = boV
+                    self.createVideoChat(with: channelName)
+                    self.send(encodableObj: boV, to: channel)
+                }
+            }
+            if self.breakoutVideo == nil {
+                SwiftSpinner.shared.title = "\(bod.memberCount)/\(bod.membersMinimum)"
             }
         }
     }
@@ -67,7 +77,7 @@ extension ViewController: AgoraRtmChannelDelegate, UIViewControllerTransitioning
                 VideoChannel.self,
                 from: messageData
             ) {
-                print("received video deets")
+                self.breakoutVideo = videoData
                 self.createVideoChat(with: videoData.channel)
             }
         }

@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     var agoraRTM: AgoraRtmKit!
     var lobbyChannel: AgoraRtmChannel?
     var breakoutChannel: AgoraRtmChannel?
+    var breakoutVideo: VideoChannel?
     var lobbyChannelName = "lobby"
     let tableView = UITableView()
 

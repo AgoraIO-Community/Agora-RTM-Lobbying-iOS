@@ -66,7 +66,7 @@ extension ViewController {
                 self.breakoutData?.seniors = Set(members.map { $0.userId }.filter{ $0 != self.username })
             }
             if let bod = self.breakoutData {
-                SwiftSpinner.shared.title = "\(members.count)/\(bod.memberLimit)"
+                SwiftSpinner.shared.title = "\(members.count)/\(bod.membersMinimum)"
             }
             self.breakoutData?.memberCount = members.count
             if let bod = self.breakoutData, (bod.seniors ?? []).isEmpty {
@@ -93,6 +93,7 @@ extension ViewController {
             }
             print("leaving breakout: \(self.breakoutData?.channelName ?? "unknown")")
             self.breakoutChannel = nil
+            self.breakoutVideo = nil
             self.breakoutData = nil
             self.tableView.reloadData()
         }

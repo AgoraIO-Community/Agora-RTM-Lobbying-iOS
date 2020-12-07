@@ -10,7 +10,7 @@ import AgoraRtmKit
 class ChannelData: Codable {
     var channelName: String = ""
     var memberCount: Int = 0
-    var memberLimit: Int = 2
+    var membersMinimum: Int = 2
     var seniors: Set<String>?
     init(channelName: String, memberCount: Int = 0, seniors: Set<String>? = nil) {
         self.channelName = channelName
