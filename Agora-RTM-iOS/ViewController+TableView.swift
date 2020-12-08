@@ -32,7 +32,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource, UITextFiel
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let chName = data[indexPath.row].channelName
         cell.textLabel?.text = chName
-        if indexPath.row == self.data.capacity - 1 {
+        if indexPath.row == self.data.count - 1 {
             // for adding a new channel
             cell.textLabel?.font = .italicSystemFont(ofSize: UIFont.systemFontSize)
         } else {
