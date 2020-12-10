@@ -8,7 +8,7 @@
 import UIKit
 
 import SwiftSpinner
-import Agora_UIKit
+import AgoraUIKit_iOS
 
 extension ViewController: UIAdaptivePresentationControllerDelegate {
 
