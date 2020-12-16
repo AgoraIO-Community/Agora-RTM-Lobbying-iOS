@@ -7,5 +7,5 @@ target 'Agora-RTM-iOS' do
 
   # Pods for Agora-RTM-iOS
   pod 'AgoraRtm_iOS'
-  pod 'AgoraUIKit_iOS', :git => 'https://github.com/AgoraIO-Community/iOS-UIKit.git', :branch => 'v2'
+  pod 'AgoraUIKit_iOS', '1.0.0-RC1'
 end

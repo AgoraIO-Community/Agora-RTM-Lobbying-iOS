@@ -48,7 +48,7 @@ class AgoraVideoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let agoraView = AgoraVideoViewer(connectionData: AgoraConnectionData(appId: appId, appToken: token), viewController: self, style: .grid)
+        let agoraView = AgoraVideoViewer(connectionData: AgoraConnectionData(appId: appId, appToken: token), style: .grid)
         agoraView.fills(view: self.view)
 
         agoraView.join(channel: channel)
