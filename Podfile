@@ -7,5 +7,5 @@ target 'Agora-RTM-iOS' do
 
   # Pods for Agora-RTM-iOS
   pod 'AgoraRtm_iOS'
-  pod 'AgoraUIKit_iOS', '1.0.0-RC1'
+  pod 'AgoraUIKit_iOS', '~> 1.0'
 end
